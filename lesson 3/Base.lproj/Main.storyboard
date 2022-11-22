@@ -44,32 +44,74 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="KNV-vT-EW2">
+                                <rect key="frame" x="47" y="318.5" width="281" height="31"/>
+                                <connections>
+                                    <action selector="sliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="nAi-TH-lst"/>
+                                </connections>
+                            </slider>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name " minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GDk-sH-zBr">
+                                <rect key="frame" x="109" y="382" width="157" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rme-ze-kCU">
+                                <rect key="frame" x="158.5" y="446" width="58.5" height="31"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Done">
+                                    <color key="baseForegroundColor" systemColor="tertiarySystemBackgroundColor"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="doneButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="vuE-nb-jrT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
+                            <constraint firstItem="Rme-ze-kCU" firstAttribute="top" secondItem="GDk-sH-zBr" secondAttribute="bottom" constant="30" id="6ET-wA-PUa"/>
                             <constraint firstItem="D5C-b0-r4d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Vr-hq-fyc"/>
                             <constraint firstItem="smV-NA-Kuo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8dP-Mj-yKB"/>
+                            <constraint firstItem="Rme-ze-kCU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BDp-13-yoV"/>
+                            <constraint firstItem="KNV-vT-EW2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="49" id="DDO-Wd-PUu"/>
+                            <constraint firstItem="KNV-vT-EW2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N1G-3O-tFG"/>
                             <constraint firstItem="oiD-O5-8Np" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UzF-Jv-xRs"/>
                             <constraint firstItem="D5C-b0-r4d" firstAttribute="top" secondItem="smV-NA-Kuo" secondAttribute="bottom" constant="26" id="YFS-Dx-USL"/>
+                            <constraint firstItem="KNV-vT-EW2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cMJ-bd-SQi"/>
                             <constraint firstItem="smV-NA-Kuo" firstAttribute="top" secondItem="oiD-O5-8Np" secondAttribute="bottom" constant="18" id="eX9-Jg-icz"/>
                             <constraint firstItem="oiD-O5-8Np" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="gXX-74-zct"/>
+                            <constraint firstItem="GDk-sH-zBr" firstAttribute="top" secondItem="KNV-vT-EW2" secondAttribute="bottom" constant="33.5" id="wiP-sU-219"/>
+                            <constraint firstItem="GDk-sH-zBr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="z7e-ZU-JAt"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="mainLabel" destination="D5C-b0-r4d" id="fFs-bL-axJ"/>
                         <outlet property="segmentedControl" destination="smV-NA-Kuo" id="J8p-TM-ARl"/>
+                        <outlet property="slider" destination="KNV-vT-EW2" id="fPR-2v-T0m"/>
+                        <outlet property="textField" destination="GDk-sH-zBr" id="oeY-Vf-jlg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="135"/>
+            <point key="canvasLocation" x="138.40000000000001" y="134.48275862068968"/>
         </scene>
     </scenes>
     <resources>
         <image name="mazda" width="1800" height="809"/>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
