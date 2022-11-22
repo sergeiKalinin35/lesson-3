@@ -8,12 +8,29 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet var mainLabel: UILabel!
+    @IBOutlet var segmentedControl: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // Label
+        mainLabel.text = ""
+        mainLabel.font = mainLabel.font.withSize(35)
+        mainLabel.numberOfLines = 2
+        
+       // Segmented Control
+        
+     
     }
-
+    
+@IBAction func segmentedAction() {
+        
+        
+        
+    }
+    
 
 }
 
