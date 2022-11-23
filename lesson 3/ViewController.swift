@@ -14,9 +14,13 @@ class ViewController: UIViewController {
     @IBOutlet var slider: UISlider!
     @IBOutlet var textField: UITextField!
     
+    @IBOutlet var datePicker: UIDatePicker!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      // date Picker localization
+        datePicker.locale = Locale(identifier: "ru_RU")
         
         
         // Slider
@@ -84,14 +88,50 @@ class ViewController: UIViewController {
         
         guard let inputText = textField.text, !inputText.isEmpty else {
             print("Text Field is empty")
+            showAlert(with: "Text Field is empty", and: "Please enter your name🏴‍☠️")
             return
         }
         
         if let _ = Double(inputText) {
+            
+            showAlert(with: "Wrong format", and: "Please enter your name🏴‍☠️")
             print("Wrong format")
             return
         }
     mainLabel.text = inputText
     }
+    
+    
+    
+    
+    @IBAction func datePickerAction() {
+        let dateFormatter = DateFormatter()
+//        dateFormatter.dateStyle = .full
+        dateFormatter.dateStyle = .medium
+        dateFormatter.locale = Locale(identifier: "ru_RU")
+        
+        mainLabel.text = dateFormatter.string(from: datePicker.date)
+    }
 }
+
+
+// MARK: - Alert Controller
+
+extension ViewController {
+    
+    private func showAlert(with title: String, and message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        // добавляем кнопки
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            self.textField.text = ""
+        }
+        // добавляем кнопку в алерт
+        alert.addAction(okAction)
+        present(alert, animated: true)
+        
+    }
+}
+
+
+
 

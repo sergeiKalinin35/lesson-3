@@ -71,6 +71,13 @@
                                     <action selector="doneButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="vuE-nb-jrT"/>
                                 </connections>
                             </button>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="AOt-bb-el1">
+                                <rect key="frame" x="37" y="498" width="304" height="124"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="datePickerAction" destination="BYZ-38-t0r" eventType="valueChanged" id="QhT-T7-Skb"/>
+                                </connections>
+                            </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
@@ -91,6 +98,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="datePicker" destination="AOt-bb-el1" id="mq0-7N-LVG"/>
                         <outlet property="mainLabel" destination="D5C-b0-r4d" id="fFs-bL-axJ"/>
                         <outlet property="segmentedControl" destination="smV-NA-Kuo" id="J8p-TM-ARl"/>
                         <outlet property="slider" destination="KNV-vT-EW2" id="fPR-2v-T0m"/>
